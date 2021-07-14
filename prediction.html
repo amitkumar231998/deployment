@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="e_read.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='e_read.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="prediction.html">Prediction</a></li>
+            <!-- <li class="item"><a href="visualization.html">Visualization</a></li> -->
+        </ul>
+    </nav>
+    
+</body>
+
+<div class="login">
+	<h1 style="background-color:powderblue;">Customer Renewal Prediction</h1>
+    <br>
+    <br>
+    <p>
+       renewal status : {{ prediction_text }}
+    </p>
+    <br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="income" placeholder="Total Income" required="required" />
+        <input type="text" name="age" placeholder="Age of people" required="required" />
+		<input type="text" name="Number_of_declarations" placeholder="Number of declaration" required="required" />
+    	<input type="text" name="Product_usage_" placeholder="Total Product used" required="required" />
+        <input type="text" name="Brand_credibility_" placeholder="Brand Credibility" required="required" />
+		<input type="text" name="Premium_price_" placeholder="premium price" required="required" />
+        <input type="text" name="children" placeholder="children" required="required" /> 
+        <input type="text" name="sex" placeholder="sex" required="required">
+        <input type="text" name="Smoker" placeholder="Smoker" required="required" />
+        <input type="text" name="bmi" placeholder="bmi" required="required" />
+        <input type="text" name="education" placeholder="education" required="required" />
+        <input type="text" name="Distinct_Parties_on_Claim" placeholder="Distinct_Parties_on_Claim" required="required" />
+        <input type="text" name="Type_of_insurance" placeholder="Type_of_insurance" required="required" />
+        <input type="text" name="Policy_Length" placeholder="Policy_Length" required="required" />
+        <input type="text" name="Claim_Type" placeholder="Claim_Type" required="required" />
+        <input type="text" name="Number_of_authorizations_" placeholder="Number_of_authorizations_" required="required" />
+        <input type="text" name="Handling_time_of_authorizations_and_declarations_" placeholder="Handling_time_of_authorizations_and_declarations_" required="required" />
+        <input type="text" name="Duration_of_current_insurance_contract" placeholder="Duration_of_current_insurance_contract" required="required" />
+        <input type="text" name="Elapsed_time_since_the_last_complaint" placeholder="Elapsed_time_since_the_last_complaint" required="required" />
+        <input type="text" name="Elapsed_time_since_last_contact_moment" placeholder="Elapsed_time_since_last_contact_moment" required="required" />
+        <input type="text" name="Policy_Claim_Day_Diff" placeholder="Policy_Claim_Day_Diff" required="required" />
+        <input type="text" name="Claim_History" placeholder="Claim_History" required="required" />
+        <input type="text" name="Renewal_History" placeholder="Renewal_History" required="required" />
+        <input type="text" name="Customer_Complaint" placeholder="Customer_Complaint" required="required" />
+        <input type="text" name="Number_of_complaints" placeholder="Number_of_complaints" required="required" />
+        <input type="text" name="Customer_mentioned_that_they_are_going_to_switch" placeholder="Customer_mentioned_that_they_are_going_to_switch" required="required" />
+        <input type="text" name="Switching_barrier_" placeholder="Switching_barrier_" required="required" />
+        <input type="text" name="Claim_Cancellation" placeholder="Claim_Cancellation" required="required" />
+        <input type="text" name="Claim_After_Renewal" placeholder="Claim_After_Renewal" required="required" />
+        <input type="text" name="Contracted_care_" placeholder="Contracted_care_" required="required" />
+        <input type="text" name="Experience_during_contact_moment" placeholder="Experience_during_contact_moment" required="required" />
+        <input type="text" name="Outstanding_charges" placeholder="Outstanding_charges" required="required" />
+        <input type="text" name="Discount" placeholder="Discount" required="required" />
+        <input type="text" name="Deductible_excess_" placeholder="Deductible_excess_" required="required" />
+        <input type="text" name="Payment_method_" placeholder="payment Methods" required="required" />
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+ </div>
+</html>
+</html>
