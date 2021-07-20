@@ -168,7 +168,7 @@ banner
     background-color: rgba(12, 184, 182) !important;
 }
 #banner{
-	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	background: url('https://github.com/amitkumar231998/deployment/blob/main/bg-banner.jpg') no-repeat fixed;
 	background-size: cover;
 	min-height: 650px;
 	position: relative;
